@@ -1,0 +1,64 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Getting Started with React",
+      "author": "John Doe",
+      "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure hic perferendis nam non totam. Dolorum labore iure iusto. Ratione earum ea id et, nulla vel! Dicta voluptas porro dolor perspiciatis. sit amet, consectetur adipiscing elit...",
+      "date": "2023-01-15",
+      "tags": [
+        "React",
+        "JavaScript",
+        "Frontend"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Mastering CSS Flexbox",
+      "author": "Jane Smith",
+      "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure hic perferendis nam non totam. Dolorum labore iure iusto. Ratione earum ea id et, nulla vel! Dicta voluptas porro dolor perspiciatis.Nulla facilisi. Integer ac pellentesque ex...",
+      "date": "2023-02-05",
+      "tags": [
+        "CSS",
+        "Flexbox",
+        "Web Design"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Node.js and Express for Backend Development",
+      "author": "Mike Johnson",
+      "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure hic perferendis nam non totam. Dolorum labore iure iusto. Ratione earum ea id et, nulla vel! Dicta voluptas porro dolor perspiciatis.Sed ut perspiciatis unde omnis iste natus error sit voluptatem...",
+      "date": "2023-03-20",
+      "tags": [
+        "Node.js",
+        "Express",
+        "Backend"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Building RESTful APIs with Django",
+      "author": "Emily Brown",
+      "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure hic perferendis nam non totam. Dolorum labore iure iusto. Ratione earum ea id et, nulla vel! Dicta voluptas porro dolor perspiciatis.Quis autem vel eum iure reprehenderit qui in ea voluptate velit...",
+      "date": "2023-04-10",
+      "tags": [
+        "Django",
+        "API",
+        "Python"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Introduction to Responsive Web Design",
+      "author": "Alex Turner",
+      "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure hic perferendis nam non totam. Dolorum labore iure iusto. Ratione earum ea id et, nulla vel! Dicta voluptas porro dolor perspiciatis.Etiam ac dolor eget enim congue tincidunt...",
+      "date": "2023-05-02",
+      "tags": [
+        "Web Design",
+        "Responsive Design",
+        "CSS"
+      ]
+    }
+  ]
+}
