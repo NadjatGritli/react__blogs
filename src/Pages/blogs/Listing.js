@@ -4,9 +4,9 @@ import { PencilOutline, TrashOutline, EyeOutline } from 'react-ionicons'
 const Listing = () => {
     const blogs = useLoaderData();
     return (
-        <div className="blogs">
+        <div className="blogs row">
             {blogs.map(blog => (
-                <div className="blog__item" key={blog.id}>
+                <div className="blog__item col-12" key={blog.id}>
                     {blog.title}
 
                     <div className="blogsTools">

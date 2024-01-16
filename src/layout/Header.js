@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
-import { MenuOutline, CloseCircleOutline } from 'react-ionicons'
+import { MenuOutline, CloseCircleOutline, SunnyOutline, MoonOutline } from 'react-ionicons'
 const Header = ({ changetheme, theme, sidebar, changeSidebar }) => {
     return (
         <header className="App-header">
             <div className="headercontent">
+                
                 <button className="closebtn" onClick={() => { changeSidebar(sidebar === '' ? 'hide' : '') }}>
                     {sidebar === 'hide' ? <MenuOutline
                         color={'#00000'}
@@ -25,8 +26,18 @@ const Header = ({ changetheme, theme, sidebar, changeSidebar }) => {
                 </NavLink>
             </div>
             <div className="headerTools">
-                <button onClick={() => { changetheme(theme === 'light' ? 'dark' : 'light') }}>
-                    {theme === 'light' ? 'Switch to Dark' : 'Switch to Light'}
+                <button className={"switchThemebtn "+theme}  onClick={() => { changetheme(theme === 'light' ? 'dark' : 'light') }}>
+                    {theme === 'dark' ? <MoonOutline
+                        color={'#00000'}
+                        title={'Light'}
+                        height="20px"
+                        width="20px"
+                    /> : <SunnyOutline
+                        color={'#00000'}
+                        title={'Light'}
+                        height="20px"
+                        width="20px"
+                    />}
                 </button>
             </div>
         </header>

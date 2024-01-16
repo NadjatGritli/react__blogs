@@ -3,7 +3,8 @@ import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements
-} from 'react-router-dom'
+} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 

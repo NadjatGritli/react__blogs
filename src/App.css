@@ -7,10 +7,26 @@
   --secondary-color2: rgb(107 52 127 / 12%)
 }
 
+/* latin */
+@font-face {
+  font-family: 'Sofia';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/sofia/v14/8QIHdirahM3j_su5uI0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 * {
   font-size: 15px;
   color: black;
   font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
 }
 
 label {
@@ -76,6 +92,7 @@ main aside {
   box-shadow: 1px 20px 10px 0px rgb(0 0 0/0.05);
   max-height: 100%;
   overflow: auto;
+  padding-bottom: 90px;
 }
 
 main aside a {
@@ -133,7 +150,7 @@ main aside a {
 
 .App-header {
   background-color: inherit;
-  min-height: 70px;
+  min-height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -157,13 +174,18 @@ main aside a {
 
 }
 
-
+.blogs {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .blog__item {
   margin-bottom: 15px;
   border-radius: 10px;
   border: 1px solid var(--main-color);
   padding: 25px;
+  margin-inline: 5px;
+  width: calc(100% / 4 - 10px);
 }
 
 .blog__item:hover {
@@ -218,18 +240,23 @@ main aside a {
 .myTof svg {
   width: 100%;
 }
-.myTof{
+
+.myTof {
   flex-grow: 1;
 }
+
 .secondSection,
 .firstSection {
-  height: calc(100vh - 130px);
+  height: calc(100vh - 90px);
+}
+
+.body.light {
+  background-color: #dcdcdc;
 }
 
 .secondSection {
   margin-top: 20px;
   margin-inline: -20px;
-  height: 100vh;
   background-color: var(--main-color1-50);
   display: flex;
   justify-content: space-between;
@@ -261,10 +288,32 @@ main aside a {
 }
 
 .aboutMe h3,
+.nadjHeader,
 .information h3 {
   font-size: 35px;
   font-weight: 600;
   margin-block: 16px;
+}
+.switchThemebtn.dark{
+  background: var(--main-color1-50);
+  border-color: var(--main-color1-50);
+}
+.switchThemebtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.nadjHeader {
+  font-family: Satisfy;
+  display: inline;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: baseline;
+  display: flex;
 }
 
 .aboutMe strong {
@@ -365,6 +414,7 @@ main aside a {
     transform: rotate(360deg);
   }
 }
+
 main {
   padding-top: 90px;
   display: flex;
@@ -372,9 +422,10 @@ main {
   min-height: calc(100vh - 90px);
   overflow-x: hidden;
   background: inherit;
-  height: calc(100vh - 90px);
+  height: 100vh;
   overflow-y: auto;
 }
+
 main aside {
   min-width: 300px;
   overflow: hidden;
@@ -388,7 +439,9 @@ main aside {
   top: 90px;
   bottom: 0;
   left: 0px;
+  transition: all 0.4s
 }
+
 .maincontainer {
   flex-grow: 0;
   padding: 20px;
@@ -396,18 +449,37 @@ main aside {
   /* min-width: inherit; */
   margin-inline-start: auto;
   width: calc(100% - 340px);
+  transition: width 0.4s
 }
-main aside.hide{
+
+main aside.hide {
   left: -300px;
-} 
-main aside.hide + .maincontainer{
+}
+
+main aside.hide+.maincontainer {
   width: 100%;
 }
-.closebtn{
+
+.closebtn {
   border: none !important;
   margin-inline-end: 10px;
   background-color: transparent !important;
 }
-.closebtn:hover{
+
+.closebtn:hover {
   color: var(--main-color);
+}
+
+@media screen and (max-width:1200px) {
+  .blog__item {
+    width: 100%;
+
+  }
+}
+
+@media screen and (max-width:992px) {
+  .blog__item {
+    width: 100%;
+
+  }
 }

@@ -15,9 +15,9 @@ const Mainlayout = () => {
     }
     return (
         <div className={`body ${theme}`}>
-            <Header changetheme={changetheme} theme={theme} sidebar={sidebar} changeSidebar={changeSidebar}  />
+            <Header changetheme={changetheme} theme={theme} sidebar={sidebar} changeSidebar={changeSidebar} />
             <main>
-                <Sidebar sidebar={sidebar} />
+                <Sidebar changetheme={changetheme} theme={theme} sidebar={sidebar} />
                 <div className="maincontainer">
                     <Outlet />
                 </div>
