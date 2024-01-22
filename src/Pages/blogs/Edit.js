@@ -32,7 +32,7 @@ const Edit = () => {
         setSelectedTags(selectedTags);
     };
     return (
-        <Form action="" method="PUT" className="editform">
+        <Form method="PUT" className="editform">
             <input type="hidden" name="tags" value={selectedTags} />
             <input type="hidden" name="id" value={blog.id} />
             <label htmlFor="title">

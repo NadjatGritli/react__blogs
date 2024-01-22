@@ -22,6 +22,8 @@ import {
 import Details from './Pages/blogs/Details';
 import Edit from './Pages/blogs/Edit';
 import Tags from './Pages/blogs/Tags';
+import WeatherData from './Pages/weatherAPI';
+import { cities, weatherSearch } from './allLoaders/weatherLoader';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Mainlayout />}>
@@ -31,6 +33,9 @@ const router = createBrowserRouter(
         <Route path='tags' element={<Tags />} id='tagsList' loader={tagsLoader} />
         <Route path='edit/:id' element={<Edit />} action={EditLoader} loader={blogDetailsLoader} />
         <Route path=':id' element={<Details />} loader={blogDetailsLoader} />
+      </Route>
+      <Route path='weather'>
+        <Route index element={<WeatherData/>} loader={cities} action={weatherSearch} />
       </Route>
     </Route>
   )

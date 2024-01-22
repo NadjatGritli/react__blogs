@@ -40,10 +40,13 @@ small {
 
 input,
 textarea,
-select {
+select,
+option {
   padding: 10px;
   border-radius: 5px;
   border-color: lightgray;
+  background-color: inherit;
+  margin-bottom: 20px;
 }
 
 textarea {
@@ -294,7 +297,7 @@ main aside a {
   font-weight: 600;
   margin-block: 16px;
 }
-.switchThemebtn.dark{
+.switchThemebtn.dark {
   background: var(--main-color1-50);
   border-color: var(--main-color1-50);
 }
@@ -482,4 +485,36 @@ main aside.hide+.maincontainer {
     width: 100%;
 
   }
+}
+
+/* Weather Part */
+
+.temptools button {
+  border: none;
+  color: rgb(211, 211, 211);
+}
+
+.temptools button:hover {
+  border: none;
+  background-color: transparent;
+  transform: scale(1.05);
+}
+
+.temptools button.active {
+  border: none;
+  color: white;
+}
+
+.temp h2 {
+  margin-bottom: 0px;
+  font-size: 50px;
+  min-width: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.feelslike {
+  min-width: 45px;
+  width: 45px;
+  display: inline-block;
 }
