@@ -8,6 +8,7 @@ const WeatherData = () => {
     const [selectedcity, setselectedcity] = useState([])
     const [weather, setWeather] = useState(null)
     const [temp_type, settemp_type] = useState("C")
+    const [days, setdays] = useState([])
     useEffect(() => {
         var countries = [];
         Object.keys(cities).map((key) => (
@@ -29,7 +30,7 @@ const WeatherData = () => {
     const hundleWeather = async () => {
         const q = selectedcity;
         var data = null;
-        const link = 'http://api.weatherapi.com/v1/current.json?key=39dfc721bd6e48f0a1f73224241601&q=' + q + '&days=7&aqi=no'
+        const link = 'http://api.weatherapi.com/v1/forecast.json?key=39dfc721bd6e48f0a1f73224241601&q=' + q + '&days=7&aqi=no'
         try {
             const res = await fetch(link)
             console.log(res)
@@ -37,6 +38,16 @@ const WeatherData = () => {
             console.log(data)
             setWeather(data)
 
+            const today = new Date();
+            setdays([])
+            const alldays = []
+            for (let i = 0; i < 7; i++) {
+
+                const nextDay = new Date();
+                nextDay.setDate(today.getDate() + i);
+                alldays.push(nextDay.toLocaleDateString('en-US', { weekday: 'long' }));
+            }
+            setdays(alldays)
         } catch (error) {
             console.log(error)
         }
@@ -45,27 +56,29 @@ const WeatherData = () => {
         // console.log(weather.location)
     }
     return (
-        <div className="WeatherSearch mt-4">
-            {country.length &&
-                <select onChange={hundleChangeCountry}>
-                    {country.map((item, index) => (
-                        <option selected={index == 2} key={"country" + item} value={item}>{item}</option>
-                    ))}
-                </select>
-            }
-            <Form onSubmit={hundleWeather}>
-                {city.length &&
-                    <select name="q" required onChange={hundleChangeCity}>
-                        {city.map((item, index) => (
-                            <option selected={index == 0} key={"city_" + item} value={item}>{item}</option>
+        <div className="WeatherSearch">
+            <div className="d-flex w-100 weathertools">
+                {country.length &&
+                    <select onChange={hundleChangeCountry} className="mb-0">
+                        {country.map((item, index) => (
+                            <option selected={index == 2} key={"country" + item} value={item}>{item}</option>
                         ))}
                     </select>
                 }
+                <Form onSubmit={hundleWeather} className="d-flex flex-grow-1">
+                    {city.length &&
+                        <select name="q" className="mb-0 flex-grow-1 mx-2" required onChange={hundleChangeCity}>
+                            {city.map((item, index) => (
+                                <option selected={index == 0} key={"city_" + item} value={item}>{item}</option>
+                            ))}
+                        </select>
+                    }
 
-                <button type="submit" className="savebtn">Save</button>
-            </Form>
-            {weather && <div className="weatherDetailsContainer">
-                <div className="weatherDetails border-top">
+                    <button type="submit" className="savebtn mt-0">Save</button>
+                </Form>
+            </div>
+            {weather && <div className="weatherDetailsContainer w-100">
+                <div className="weatherDetails pt-5">
                     <h3 className="mx-auto mt-4 text-center">
                         {weather.location.name} ,{weather.location.region}, {weather.location.country}
                     </h3>
@@ -96,9 +109,9 @@ const WeatherData = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="d-flex justify-content-between ">
+                    <div className="d-flex justify-content-between otherdata">
                         <p>
-                            feels like : <span className="feelslike">{temp_type === "C"?weather.current.feelslike_c+"°":weather.current.feelslike_f+" F"} </span>
+                            feels like : <span className="feelslike">{temp_type === "C" ? weather.current.feelslike_c + "°" : weather.current.feelslike_f + " F"} </span>
                         </p>
                         <p>
                             wind : {weather.current.wind_kph}km/h
@@ -107,6 +120,28 @@ const WeatherData = () => {
                             visibility : {weather.current.vis_km}km
                         </p>
                     </div>
+                    {days.length && <div className="d-flex overflow-auto mt-5 waetherdayss">
+                        {days.map((day, index) => (
+                            <div key={day} className="weatherday">
+                                <p className="dataname mt-3">
+                                    {day}
+                                </p>
+                                <img src={weather.forecast.forecastday[index].day.condition.icon} alt={day + "__" + weather.forecast.forecastday[index].date} />
+                                <div className="daytemp">
+                                    <span className="daytmp">
+                                        {temp_type === "C" ? weather.forecast.forecastday[index].day.maxtemp_c + "°" : weather.forecast.forecastday[index].day.maxtemp_f + " f"}
+                                    </span>
+                                    <span className="nighttmp">
+                                        {temp_type === "C" ? weather.forecast.forecastday[index].day.mintemp_c + "°" : weather.forecast.forecastday[index].day.mintemp_f + " f"}
+                                    </span>
+                                </div>
+                                <p>
+                                    {weather.forecast.forecastday[index].day.condition.text}
+                                </p>
+                            </div>
+                        ))}
+                    </div>}
+
                 </div>
             </div>
             }

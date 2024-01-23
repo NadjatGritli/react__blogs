@@ -297,10 +297,12 @@ main aside a {
   font-weight: 600;
   margin-block: 16px;
 }
+
 .switchThemebtn.dark {
   background: var(--main-color1-50);
   border-color: var(--main-color1-50);
 }
+
 .switchThemebtn {
   width: 40px;
   height: 40px;
@@ -517,4 +519,49 @@ main aside.hide+.maincontainer {
   min-width: 45px;
   width: 45px;
   display: inline-block;
+}
+.waetherdayss{
+  max-width: 1400px;
+  margin-inline: auto;
+}
+.weatherday {
+  width: 200px;
+  min-width: 200px;
+  border-inline-end: 1px solid var(--main-color1-50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 350px;
+}
+.otherdata{
+  width: calc(1400px / 3);
+  margin-inline: auto;
+}
+.weatherday:last-child {
+  border-inline-end: none;
+}
+
+span.daytmp {
+  font-size: 25px;
+  margin-inline-end: 5px;
+}
+
+span.nighttmp {
+  opacity: .6;
+}
+.WeatherSearch {
+  margin-block: 1.5rem !important;
+  display: flex;
+  flex-wrap: wrap;
+}
+.weathertools{
+  box-shadow: 0 1px 1rem 0px rgb(255 255 255 / 6%);
+  display: flex;
+  width: 100%;
+  padding-block: 3rem;
+  border-radius: 0.5rem;
+  padding-inline: 16px;
+}
+.light .weathertools{
+  box-shadow: 0 1px 1rem 0px rgba(0, 0, 0, 0.06);
 }
