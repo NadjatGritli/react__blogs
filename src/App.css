@@ -161,6 +161,7 @@ main aside a {
   padding-block: 10px;
   max-height: 90px;
   position: absolute;
+  z-index: 10;
   box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 12%);
   width: 100%;
 }
@@ -514,7 +515,10 @@ main aside.hide+.maincontainer {
   display: flex;
   justify-content: center;
 }
-
+.weatherDetails>*{
+  position: relative;
+  z-index: 1;
+}
 .feelslike {
   min-width: 45px;
   width: 45px;
@@ -564,4 +568,22 @@ span.nighttmp {
 }
 .light .weathertools{
   box-shadow: 0 1px 1rem 0px rgba(0, 0, 0, 0.06);
+}
+.apexcharts-xaxistooltip, .apexcharts-yaxistooltip,.apexcharts-menu,.apexcharts-tooltip {
+  color: #373d3f;
+  background: var(--main-color1-50) !important;
+  border: 1px solid var(--main-color) !important;
+}
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  background: var(--main-color) !important;
+  border-bottom: none !important;
+}
+text{fill: #000;}
+.dark text{fill: #fff;}
+.DAyDetails h3{
+  border-bottom: 1px solid;
+}
+.ddtcnt{flex-wrap: wrap;}
+.ddt{
+  min-width: 150px;
 }
