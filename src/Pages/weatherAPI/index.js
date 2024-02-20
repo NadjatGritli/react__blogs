@@ -132,12 +132,12 @@ const WeatherData = () => {
                             </p>
                         </div>
                         {days.length && <div className="d-flex overflow-auto mt-5 waetherdayss">
-                            {days.map((day, index) => (
-                                <div key={day} className="weatherday">
+                            {weather.forecast.forecastday.map((day, index) => (
+                                <div key={days[index]} className="weatherday">
                                     <p className="dataname mt-3">
-                                        {day}
+                                        {days[index]}
                                     </p>
-                                    <img src={weather.forecast.forecastday[index].day.condition.icon} alt={day + "__" + weather.forecast.forecastday[index].date} />
+                                    <img src={weather.forecast.forecastday[index].day.condition.icon} alt={days[index] + "__" + weather.forecast.forecastday[index].date} />
                                     <div className="daytemp">
                                         <span className="daytmp">
                                             {temp_type === "C" ? weather.forecast.forecastday[index].day.maxtemp_c + "°" : weather.forecast.forecastday[index].day.maxtemp_f + " f"}

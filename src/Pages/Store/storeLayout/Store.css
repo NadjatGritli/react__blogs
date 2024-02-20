@@ -1,0 +1,16 @@
+.center {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_logo {
+    max-height: 50px;
+}
+
+.navbar svg {
+    margin-inline-end: 10px;
+}
+.banner_img{width: 100%;}
+.banner_container{overflow: auto;}

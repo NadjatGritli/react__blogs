@@ -22,20 +22,27 @@ import {
 import Details from './Pages/blogs/Details';
 import Edit from './Pages/blogs/Edit';
 import Tags from './Pages/blogs/Tags';
+import App_store from './Pages/Store/storeLayout/appstore';
 import WeatherData from './Pages/weatherAPI';
 import { cities, weatherSearch } from './allLoaders/weatherLoader';
+import Index from './Pages/Store';
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Mainlayout />}>
-      <Route index element={<Home />} />
-      <Route path='blogs' action={deleteBlog} >
-        <Route index element={<Listing />} loader={blogsLoader} />
-        <Route path='tags' element={<Tags />} id='tagsList' loader={tagsLoader} />
-        <Route path='edit/:id' element={<Edit />} action={EditLoader} loader={blogDetailsLoader} />
-        <Route path=':id' element={<Details />} loader={blogDetailsLoader} />
+    <Route path='/'>
+      <Route path='/' element={<Mainlayout />}>
+        <Route index element={<Home />} />
+        <Route path='blogs' action={deleteBlog} >
+          <Route index element={<Listing />} loader={blogsLoader} />
+          <Route path='tags' element={<Tags />} id='tagsList' loader={tagsLoader} />
+          <Route path='edit/:id' element={<Edit />} action={EditLoader} loader={blogDetailsLoader} />
+          <Route path=':id' element={<Details />} loader={blogDetailsLoader} />
+        </Route>
+        <Route path='weather'>
+          <Route index element={<WeatherData />} loader={cities} action={weatherSearch} />
+        </Route>
       </Route>
-      <Route path='weather'>
-        <Route index element={<WeatherData/>} loader={cities} action={weatherSearch} />
+      <Route path='store' element={<App_store />}>
+        <Route index element={<Index />} />
       </Route>
     </Route>
   )

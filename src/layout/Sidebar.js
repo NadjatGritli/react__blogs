@@ -25,6 +25,7 @@ const Sidebar = ({ changetheme, theme, sidebar }) => {
                 </NavLink>
                 <NavLink className="sidebar__link" to="/blogs">Blogs</NavLink>
                 <NavLink className="sidebar__link" to="/weather">Weather</NavLink>
+                <NavLink className="sidebar__link" to="/store">Store</NavLink>
             </div>
             <div className="sidebarTools">
 
