@@ -15,5 +15,39 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "categories":[
+    {
+      "id":1,
+      "name":"Foundation"
+    },
+    {
+      "id":2,
+      "name":"Moisturizers"
+    },
+    {
+      "id":3,
+      "name":"Hair Styling & Treatments"
+    },
+    {
+      "id":4,
+      "name":"Perfume"
+    },
+    {
+      "id":5,
+      "name":"Eye Palettes"
+    },
+    {
+      "id":6,
+      "name":"Mascara"
+    },
+    {
+      "id":7,
+      "name":"Eyeliner"
+    },
+    {
+      "id":8,
+      "name":"Eyelash"
+    }
+  ]
 }
