@@ -19,6 +19,9 @@ import {
   deleteBlog,
   tagsLoader
 } from './allLoaders/blogsLoader';
+import {
+  indexLoader
+} from './allLoaders/storeLoader'
 import Details from './Pages/blogs/Details';
 import Edit from './Pages/blogs/Edit';
 import Tags from './Pages/blogs/Tags';
@@ -42,7 +45,7 @@ const router = createBrowserRouter(
         </Route>
       </Route>
       <Route path='store' element={<App_store />}>
-        <Route index element={<Index />} />
+        <Route index element={<Index />} loader={indexLoader}/>
       </Route>
     </Route>
   )
