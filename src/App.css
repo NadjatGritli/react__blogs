@@ -106,7 +106,9 @@ main aside a {
 .dark * {
   color: white;
 }
-
+.dark option {
+  background: black;
+}
 .downloadCv {
   margin-top: 20px;
   margin-inline: auto;
