@@ -13,19 +13,16 @@ const Index = () => {
             {sections.map((item, index) => {
                 switch (item.type) {
                     case "slider":
-                        return (<section>
-                            <Slider title={item.title} ids={item.listIds} key={item.title + '-' + item.id} />
-                        </section>)
+                        return (<div key={item.title + '-' + item.id}>
+                            <Slider title={item.title} ids={item.listIds} />
+                        </div>)
                     case "productList":
-                        return (<section>
-                            <ProductList title={item.title} ids={item.listIds} key={item.title + '-' + item.id} />
+                        return (<section key={item.title + '-' + item.id}>
+                            <ProductList title={item.title} ids={item.listIds} />
                         </section>)
 
                     default:
-                        <h1>
-                            {item.type}
-                        </h1>
-                        break;
+                        return (<h1 key={item.title + '-' + item.id}></h1>)
                 }
 
             }

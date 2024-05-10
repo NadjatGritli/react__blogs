@@ -1,5 +1,6 @@
-const ProductList = ({title,ids})=>{
-    console.log(ids)
+import ProductCard from "./productCard"
+
+const ProductList = ({ title, ids }) => {
     return (
         <div>
             <div className="SectionTitle">
@@ -7,7 +8,16 @@ const ProductList = ({title,ids})=>{
                     {title}
                 </h1>
             </div>
-            
+            <div className="productList row">
+
+                {
+                    ids.map((id) => (
+                        <div className="col-3" key={title + '_product_' + id}>
+                            <ProductCard id={id} />
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     )
 }

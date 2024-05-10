@@ -52,10 +52,16 @@
   ],
   "sections":[
     {
+      "id":0,
+      "type":"slider",
+      "listIds":[1,2,3],
+      "title":""
+    },
+    {
       "id":1,
       "type":"productList",
       "listIds":[1,3,2,4,7,5,8,6],
-      "title":""
+      "title":"Top products"
     },
     {
       "id":2,
@@ -67,7 +73,7 @@
       "id":3,
       "type":"productList",
       "listIds":[1,2,3,4],
-      "title":""
+      "title":"Most selled product"
     },
     {
       "id":8,
@@ -85,13 +91,13 @@
       "id":5,
       "type":"productList",
       "listIds":[1,2,3,4],
-      "title":""
+      "title":"New Products"
     },
     {
       "id":6,
       "type":"productList",
       "listIds":[1,2,3,4],
-      "title":""
+      "title":"Selected for you"
     },
     {
       "id":7,
