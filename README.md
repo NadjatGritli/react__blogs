@@ -1,7 +1,11 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Some Links : 
+https://makeupstore.com/
+https://www.ulta.com/
+https://www.sephora.fr/
 ## Available Scripts
 
 In the project directory, you can run:
